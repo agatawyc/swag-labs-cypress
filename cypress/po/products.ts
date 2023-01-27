@@ -3,6 +3,6 @@ export class Products {
     return cy.get("#shopping_cart_container");
   }
   addProduct() {
-    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click(); // to refactor
+    cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   }
 }

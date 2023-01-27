@@ -18,7 +18,7 @@ describe("Cart workflow", () => {
     cy.visit("/", {});
   });
   it("should buy a product", () => {
-    login.validLogin("standard_user", "secret_sauce"); // use env for passwords
+    login.validLogin(Cypress.env("login"), Cypress.env("password"));
     products.getShoppingCart().should("be.visible");
     cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
     products.addProduct();
@@ -35,7 +35,7 @@ describe("Cart workflow", () => {
   });
 
   it("Should remove a product from the cart", () => {
-    login.validLogin("standard_user", "secret_sauce");
+    login.validLogin(Cypress.env("login"), Cypress.env("password"));
     products.getShoppingCart().should("be.visible");
     cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
     products.addProduct();

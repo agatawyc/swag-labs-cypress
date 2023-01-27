@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/agatawyc/swag-labs-tests#readme",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "cypress": "^12.3.0",
     "eslint": "^8.32.0",

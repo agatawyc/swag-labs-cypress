@@ -14,10 +14,12 @@ describe("Login", () => {
     products.getShoppingCart().should("be.visible");
     cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
   });
+
   it("should not log in", () => {
-    login.typeUsername("standard_user");
-    login.typePassword("wrong_password");
-    login.clickLoginButton();
+    login
+      .typeUsername("standard_user")
+      .typePassword("wrong_password")
+      .clickLoginButton();
     login
       .getError()
       .should("exist")

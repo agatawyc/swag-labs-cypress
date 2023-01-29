@@ -22,8 +22,7 @@ describe("Login", () => {
       .clickLoginButton();
     login
       .getError()
-      .should("exist")
-      .and(
+      .should(
         "have.text",
         "Epic sadface: Username and password do not match any user in this service"
       );

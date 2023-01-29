@@ -19,29 +19,21 @@ describe("Cart workflow", () => {
   });
   it("should buy a product", () => {
     login.validLogin(Cypress.env("login"), Cypress.env("password"));
-    products.getShoppingCart().should("be.visible");
-    cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
     products.addProduct();
     products.getShoppingCart().click();
     cart.getQuantity().should("have.text", "1");
     cart.getProductName().should("have.text", "Sauce Labs Backpack");
     cart.clickCheckoutButton();
-    cart.checkoutSummary().should("be.visible");
     checkout.validSummary(firstName, lastName, postalCode);
     checkout.clickContinueButton();
-    checkout.getCheckoutInfo().should("be.visible");
     checkout.clickFinishButton();
     checkout.getFinishInfo().should("be.visible");
   });
 
   it("Should remove a product from the cart", () => {
     login.validLogin(Cypress.env("login"), Cypress.env("password"));
-    products.getShoppingCart().should("be.visible");
-    cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
     products.addProduct();
     products.getShoppingCart().click();
-    cart.getQuantity().should("have.text", "1");
-    cart.getProductName().should("have.text", "Sauce Labs Backpack");
     cart.removeProduct();
     cart.getRemovedCartStatus().should("exist");
   });

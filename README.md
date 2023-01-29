@@ -1,5 +1,5 @@
 Few of the most common user paths are covered by automated tests, written using Page Object Pattern.
-GitHub Actions are configured, so after every `push` tests are automatically run.
+GitHub Actions are configured, so in every Pull Request, tests are automatically run.
 
 ## How to run tests:
 

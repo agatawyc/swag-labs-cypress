@@ -2,12 +2,15 @@ export class Checkout {
   typeFirstName(firstName: string) {
     cy.get('[data-test="firstName"]').type(firstName);
   }
+
   typeLastName(lastName: string) {
     cy.get('[data-test="lastName"]').type(lastName);
   }
+
   typePostalCode(postalCode: string) {
     cy.get('[data-test="postalCode"]').type(postalCode);
   }
+
   clickContinueButton() {
     cy.get('[data-test="continue"]').click();
   }
@@ -17,12 +20,11 @@ export class Checkout {
     this.typeLastName(lastName);
     this.typePostalCode(postalCode);
   }
-  getCheckoutInfo() {
-    return cy.get("#checkout_summary_container");
-  }
+
   clickFinishButton() {
     cy.get('[data-test="finish"]').click();
   }
+
   getFinishInfo() {
     return cy.get("#checkout_complete_container");
   }

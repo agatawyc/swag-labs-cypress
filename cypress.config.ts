@@ -5,5 +5,6 @@ export default defineConfig({
     baseUrl: "https://www.saucedemo.com",
     supportFile: false,
     videoUploadOnPasses: false,
+    chromeWebSecurity: false,
   },
 });

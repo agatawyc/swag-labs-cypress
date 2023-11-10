@@ -17,4 +17,8 @@ export class Products {
   getInventoryNames() {
     return cy.get(".inventory_item_name");
   }
+
+  getInventoryPrices() {
+    return cy.get(".inventory_item_price");
+  }
 }

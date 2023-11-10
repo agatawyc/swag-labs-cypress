@@ -14,7 +14,7 @@ describe("Inventory view", () => {
     cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
     products.sortProductsBy("Name (A to Z)");
     products.getInventoryNames().should(($elements) => {
-      const results = $elements.map((index, el) => el.innerText).get();
+      const results = $elements.map((_index, el) => el.innerText).get();
       const sortedResults = results.sort();
       expect(results).to.deep.equal(sortedResults);
     });
@@ -25,7 +25,7 @@ describe("Inventory view", () => {
     cy.url().should("eq", "https://www.saucedemo.com/inventory.html");
     products.sortProductsBy("Name (Z to A)");
     products.getInventoryNames().should(($elements) => {
-      const results = $elements.map((index, el) => el.innerText).get();
+      const results = $elements.map((_index, el) => el.innerText).get();
       const sortedResults = results.sort().reverse();
       expect(results).to.deep.equal(sortedResults);
     });

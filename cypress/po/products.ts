@@ -6,4 +6,15 @@ export class Products {
   addProduct() {
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
   }
+
+  sortProductsBy(option: string): Products {
+    cy.get('[data-test="product_sort_container"]').select(option, {
+      force: true,
+    });
+    return this;
+  }
+
+  getInventoryNames() {
+    return cy.get(".inventory_item_name");
+  }
 }
